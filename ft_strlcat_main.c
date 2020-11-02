@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   memset.c                                           :+:    :+:            */
+/*   ft_strlcat_main.c                                  :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jsimelio <jsimelio@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/11/02 09:08:17 by jsimelio      #+#    #+#                 */
-/*   Updated: 2020/11/02 09:50:26 by jsimelio      ########   odam.nl         */
+/*   Created: 2020/11/02 09:52:55 by jsimelio      #+#    #+#                 */
+/*   Updated: 2020/11/02 19:41:55 by jsimelio      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#define LEN 100
 
-void	*ft_memset(void *b, int c, size_t len)
+int	main(void)
 {
-	unsigned char *dest;
-
-	dest = b;
-	while (len)
-	{
-		*dest = c;
-		dest++;
-		len--;
-	}
-	return (dest);
+	char src[LEN] = "HiHelloHowAreYou?\0";
+	char dst[LEN] = "FooBar\0";
+	size_t dstsize = 0;
+	printf("%zu\n", ft_strlcat(dst, src, dstsize));
+	printf("%s\n", dst);
+	return (0);
 }

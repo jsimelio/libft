@@ -1,27 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   memset.c                                           :+:    :+:            */
+/*   ft_isalpha_main.c                                  :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jsimelio <jsimelio@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/11/02 09:08:17 by jsimelio      #+#    #+#                 */
-/*   Updated: 2020/11/02 09:50:26 by jsimelio      ########   odam.nl         */
+/*   Created: 2020/11/02 21:44:58 by jsimelio      #+#    #+#                 */
+/*   Updated: 2020/11/02 22:01:35 by jsimelio      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *b, int c, size_t len)
-{
-	unsigned char *dest;
-
-	dest = b;
-	while (len)
-	{
-		*dest = c;
-		dest++;
-		len--;
-	}
-	return (dest);
-}
+ int	main(void)
+ {
+	printf("%d,", ft_isalpha('Z'));
+	return (0);
+ }

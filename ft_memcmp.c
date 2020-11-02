@@ -1,27 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   memset.c                                           :+:    :+:            */
+/*   ft_memcmp.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jsimelio <jsimelio@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/11/02 09:08:17 by jsimelio      #+#    #+#                 */
-/*   Updated: 2020/11/02 09:50:26 by jsimelio      ########   odam.nl         */
+/*   Created: 2020/11/02 15:50:28 by jsimelio      #+#    #+#                 */
+/*   Updated: 2020/11/02 16:47:08 by jsimelio      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	unsigned char *dest;
+	unsigned char	*s1_copy;
+	unsigned char	*s2_copy;
+	int				len;
 
-	dest = b;
+	s1_copy = (unsigned char*)s1;
+	s2_copy = (unsigned char*)s2;
+	len = (int)n;
 	while (len)
 	{
-		*dest = c;
-		dest++;
-		len--;
+		if (*s1_copy == *s2_copy)
+		{
+			s1_copy++;
+			s2_copy++;
+			len--;
+		}
+		else
+			return (*s1_copy - *s2_copy);
 	}
-	return (dest);
+	return (0);
 }

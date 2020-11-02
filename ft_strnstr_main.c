@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   memset.c                                           :+:    :+:            */
+/*   ft_strnstr_main.c                                  :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jsimelio <jsimelio@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/11/02 09:08:17 by jsimelio      #+#    #+#                 */
-/*   Updated: 2020/11/02 09:50:26 by jsimelio      ########   odam.nl         */
+/*   Created: 2020/11/02 19:50:58 by jsimelio      #+#    #+#                 */
+/*   Updated: 2020/11/02 21:18:46 by jsimelio      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#define LEN 100
 
-void	*ft_memset(void *b, int c, size_t len)
+int	main(void)
 {
-	unsigned char *dest;
+	char haystack[LEN] = "hello\0";
+	char needle[LEN] = "el\0";
+	int len = 10;
 
-	dest = b;
-	while (len)
-	{
-		*dest = c;
-		dest++;
-		len--;
-	}
-	return (dest);
+	printf("%s\n", ft_strnstr(haystack, needle, len));
+	return (0);
 }
