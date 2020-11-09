@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_isdigit.c                                       :+:    :+:            */
+/*   ft_putchar_fd.c                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jsimelio <jsimelio@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/11/02 21:44:58 by jsimelio      #+#    #+#                 */
-/*   Updated: 2020/11/09 18:08:50 by jsimelio      ########   odam.nl         */
+/*   Created: 2020/11/09 16:10:22 by jsimelio      #+#    #+#                 */
+/*   Updated: 2020/11/09 16:18:21 by jsimelio      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(int c)
+void	ft_putchar_fd(char c, int fd)
 {
-	if (c >= '0' && c <= '9')
-		return (1);
-	return (0);
+	write(fd, &c, sizeof(char));
 }
