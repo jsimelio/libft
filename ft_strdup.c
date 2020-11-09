@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strnstr.c                                       :+:    :+:            */
+/*   ft_strdup.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jsimelio <jsimelio@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/11/02 20:33:23 by jsimelio      #+#    #+#                 */
-/*   Updated: 2020/11/03 12:58:04 by jsimelio      ########   odam.nl         */
+/*   Created: 2020/11/03 13:39:53 by jsimelio      #+#    #+#                 */
+/*   Updated: 2020/11/07 18:48:37 by jsimelio      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+char	*ft_strdup(const char *s1)
 {
-	size_t n;
+	void	*memory;
+	int		strlen;
 
-	n = ft_strlen(needle);
-	while (*haystack && len)
-	{
-		if (!ft_memcmp((char*)needle, haystack, n))
-			return ((char*)haystack);
-		haystack++;
-		len--;
-	}
-	return ((void*)(0));
+	strlen = ft_strlen(s1);
+	if (!(memory = malloc(strlen * sizeof(char))))
+		return ((void*)(0));
+	ft_memcpy(memory, s1, strlen);
+	return (memory);
 }

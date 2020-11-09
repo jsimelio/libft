@@ -1,28 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strnstr.c                                       :+:    :+:            */
+/*   ft_atoi_main.c                                     :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jsimelio <jsimelio@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/11/02 20:33:23 by jsimelio      #+#    #+#                 */
-/*   Updated: 2020/11/03 12:58:04 by jsimelio      ########   odam.nl         */
+/*   Created: 2020/11/02 09:52:55 by jsimelio      #+#    #+#                 */
+/*   Updated: 2020/11/06 10:41:34 by jsimelio      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+int	main(void)
 {
-	size_t n;
-
-	n = ft_strlen(needle);
-	while (*haystack && len)
-	{
-		if (!ft_memcmp((char*)needle, haystack, n))
-			return ((char*)haystack);
-		haystack++;
-		len--;
-	}
-	return ((void*)(0));
+	char str[100] = "    ++0123asf\0";
+	printf("atoi: %d\n", atoi(str));
+	printf("ft_atoi: %d\n", ft_atoi(str));
+	return (0);
 }

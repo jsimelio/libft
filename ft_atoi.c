@@ -1,28 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strnstr.c                                       :+:    :+:            */
+/*   ft_atoi.c                                          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jsimelio <jsimelio@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/11/02 20:33:23 by jsimelio      #+#    #+#                 */
-/*   Updated: 2020/11/03 12:58:04 by jsimelio      ########   odam.nl         */
+/*   Created: 2020/11/06 10:34:37 by jsimelio      #+#    #+#                 */
+/*   Updated: 2020/11/06 10:41:14 by jsimelio      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+int		ft_atoi(char *str)
 {
-	size_t n;
+	int sign;
+	int num;
 
-	n = ft_strlen(needle);
-	while (*haystack && len)
+	num = 0;
+	while (*str == ' ')
+		str++;
+	sign = 0;
+	if (*str == '+' || *str == '-')
 	{
-		if (!ft_memcmp((char*)needle, haystack, n))
-			return ((char*)haystack);
-		haystack++;
-		len--;
+		if (*str == '-')
+			sign--;
+		str++;
 	}
-	return ((void*)(0));
+	while (ft_isdigit(*str) != 0)
+	{
+		num = num * 10 + (*str - '0');
+		str++;
+	}
+	if (sign < 0)
+		num = -num;
+	return (num);
 }

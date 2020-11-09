@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strnstr.c                                       :+:    :+:            */
+/*   ft_split.c                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jsimelio <jsimelio@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/11/02 20:33:23 by jsimelio      #+#    #+#                 */
-/*   Updated: 2020/11/03 12:58:04 by jsimelio      ########   odam.nl         */
+/*   Created: 2020/11/09 09:36:06 by jsimelio      #+#    #+#                 */
+/*   Updated: 2020/11/09 10:01:36 by jsimelio      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+# include "libft.h"
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+char	**ft_split(char const *s, char c)
 {
-	size_t n;
+	char	**strs;
+	int		start;
+	int		len;
 
-	n = ft_strlen(needle);
-	while (*haystack && len)
-	{
-		if (!ft_memcmp((char*)needle, haystack, n))
-			return ((char*)haystack);
-		haystack++;
-		len--;
-	}
-	return ((void*)(0));
+	strs = malloc(sizeof(char*) * 2);
+	if (!*s || c == '\0')
+		return (strs);
+	len = ft_strlen(s);
+	start = 0;
+	while (s[start] && s[start] != c)
+		start++;
+	strs[0] = ft_substr(s, 0, start);
+	strs[1] = ft_substr(s, start, len - start);
+	return (strs);
 }
