@@ -6,7 +6,7 @@
 /*   By: jsimelio <jsimelio@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/02 19:50:58 by jsimelio      #+#    #+#                 */
-/*   Updated: 2020/11/03 12:50:30 by jsimelio      ########   odam.nl         */
+/*   Updated: 2020/11/14 21:20:36 by jsimelio      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,11 @@
 
 int	main(void)
 {
-	char haystack[LEN] = "hello\0";
-	char needle[LEN] = "el\0";
-	int len = 5;
-
-	printf("%s\n", ft_strnstr(haystack, needle, len));
+	char *s1 = "MZIRIBMZIRIBMZE123";
+	char *s2 = "MZIRIBMZE";
+	size_t max = strlen(s2);
+	char *i1 = ft_strnstr(s1, s2, 14);
+	// char *i2 = ft_strnstr(s1, s2, 10);
+	printf("%s\n", i1);
 	return (0);
 }
