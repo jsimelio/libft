@@ -1,24 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_memcpy_main.c                                   :+:    :+:            */
+/*   ft_lstadd_front_main.c                             :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jsimelio <jsimelio@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/11/02 09:52:55 by jsimelio      #+#    #+#                 */
-/*   Updated: 2020/11/12 19:52:42 by jsimelio      ########   odam.nl         */
+/*   Created: 2020/11/10 12:24:31 by jsimelio      #+#    #+#                 */
+/*   Updated: 2020/11/10 17:17:26 by jsimelio      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#define LEN 100
 
 int	main(void)
 {
-	int return_value;
-	int ft_return_value;
-	unsigned char  *src = NULL;
-	char *dest = NULL;
-	printf("%s", ft_memcpy(dest, src, 15));
-	return (0);
+	t_list	*first;
+	t_list	*second;
+	t_list	*third;
+	t_list	**list;
+
+	first->content = "First.\n";
+	second->content = "Second.\n";
+	third->content = "Third.\n";
+	first->next = NULL;
+	second->next = third;
+	third->next = NULL;
+	list[0] = second;
+	list[1] = third;
+	list[2] = NULL;
+	ft_lstadd_front(list, first);
+	printf("%s\n", list[0]->content);
+	int i = 0;
+	while (i<3)
+	{
+		printf("%s\n", list[i]->content);
+		i++;
+	}
 }

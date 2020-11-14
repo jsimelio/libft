@@ -6,12 +6,12 @@
 /*   By: jsimelio <jsimelio@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/02 09:52:55 by jsimelio      #+#    #+#                 */
-/*   Updated: 2020/11/02 14:34:00 by jsimelio      ########   odam.nl         */
+/*   Updated: 2020/11/12 20:28:16 by jsimelio      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#define LEN 10
+#define LEN 100
 
 int	main(void)
 {
@@ -19,7 +19,8 @@ int	main(void)
 	unsigned char dest[LEN];
 	char c;
 
-	c = 'H';
-	printf("%s", ft_memccpy(dest, src, c, 10));
+	c = 'K';
+	ft_memccpy(dest, src, c, 10);
+	printf("%s", dest);
 	return (0);
 }

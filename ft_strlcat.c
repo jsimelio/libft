@@ -6,13 +6,11 @@
 /*   By: jsimelio <jsimelio@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/02 16:46:13 by jsimelio      #+#    #+#                 */
-/*   Updated: 2020/11/09 18:17:29 by jsimelio      ########   odam.nl         */
+/*   Updated: 2020/11/10 19:36:56 by jsimelio      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "ft_memcpy.c"
-#include "ft_strlen.c"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {

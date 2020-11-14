@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_isascii.c                                       :+:    :+:            */
+/*   ft_lstnew_main.c                                   :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jsimelio <jsimelio@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/11/02 21:44:58 by jsimelio      #+#    #+#                 */
-/*   Updated: 2020/11/10 19:36:12 by jsimelio      ########   odam.nl         */
+/*   Created: 2020/11/10 12:24:31 by jsimelio      #+#    #+#                 */
+/*   Updated: 2020/11/10 13:19:35 by jsimelio      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isascii(int c)
+int	main(void)
 {
-	if (c >= 0 && c <= 127)
-		return (1);
-	return (0);
+	char	*str = "HiHello\0";
+	t_list	*list_element;
+
+	list_element = ft_lstnew(str);
+	printf("%s", list_element->content);
 }

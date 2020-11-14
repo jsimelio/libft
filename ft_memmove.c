@@ -6,7 +6,7 @@
 /*   By: jsimelio <jsimelio@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/02 11:59:32 by jsimelio      #+#    #+#                 */
-/*   Updated: 2020/11/02 15:35:51 by jsimelio      ########   odam.nl         */
+/*   Updated: 2020/11/12 17:46:38 by jsimelio      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	unsigned char 	*dst2;
-	unsigned char 	*src2;
-	int 			len_int;
+	unsigned char	*dst2;
+	unsigned char	*src2;
+	int				len_int;
 
 	len_int = (int)len;
 	dst2 = (unsigned char*)dst;

@@ -1,20 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_isascii.c                                       :+:    :+:            */
+/*   main.c                                             :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jsimelio <jsimelio@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/11/02 21:44:58 by jsimelio      #+#    #+#                 */
-/*   Updated: 2020/11/10 19:36:12 by jsimelio      ########   odam.nl         */
+/*   Created: 2020/11/10 19:29:32 by jsimelio      #+#    #+#                 */
+/*   Updated: 2020/11/10 19:30:16 by jsimelio      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int	ft_isascii(int c)
+int	main(void)
 {
-	if (c >= 0 && c <= 127)
-		return (1);
 	return (0);
 }
