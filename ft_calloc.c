@@ -6,7 +6,7 @@
 /*   By: jsimelio <jsimelio@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/03 13:39:53 by jsimelio      #+#    #+#                 */
-/*   Updated: 2020/11/07 18:48:15 by jsimelio      ########   odam.nl         */
+/*   Updated: 2020/11/15 16:36:15 by jsimelio      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void	*ft_calloc(size_t count, size_t size)
 
 	if (!(memory = malloc(size * count)))
 		return ((void*)(0));
-	ft_bzero(memory, sizeof(memory));
+	ft_bzero(memory, count * size);
 	return (memory);
 }
+
