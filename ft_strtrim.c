@@ -6,7 +6,7 @@
 /*   By: jsimelio <jsimelio@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/06 14:24:41 by jsimelio      #+#    #+#                 */
-/*   Updated: 2020/11/07 20:08:55 by jsimelio      ########   odam.nl         */
+/*   Updated: 2020/11/15 21:56:09 by jsimelio      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	start = 0;
 	end = 0;
 	s1copy = s1;
-	if (!*s1)
-		return ((void*)(0));
-	if (!*set)
+	if (!set || !s1)
 		return ((char *)s1);
 	while (ft_strchr(set, *s1copy))
 	{

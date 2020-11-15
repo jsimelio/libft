@@ -6,11 +6,11 @@
 /*   By: jsimelio <jsimelio@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/09 09:36:06 by jsimelio      #+#    #+#                 */
-/*   Updated: 2020/11/09 15:41:28 by jsimelio      ########   odam.nl         */
+/*   Updated: 2020/11/15 21:58:35 by jsimelio      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "libft.h"
+#include "libft.h"
 
 char	**ft_split(char const *s, char c)
 {

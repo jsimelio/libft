@@ -6,7 +6,7 @@
 /*   By: jsimelio <jsimelio@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/02 09:52:55 by jsimelio      #+#    #+#                 */
-/*   Updated: 2020/11/15 17:12:38 by jsimelio      ########   odam.nl         */
+/*   Updated: 2020/11/15 21:51:09 by jsimelio      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 int	main(void)
 {
-	char *str = "01234";
+	char *str = "Hello";
 	size_t size = 10;
-	char *ret = ft_substr(str, 10, size);
+	char *ret = ft_substr(str, 1, size);
 
 	// if (!strncmp(ret, "", 1))
 	// 	printf("failure!\n");
