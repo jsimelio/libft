@@ -6,7 +6,7 @@
 /*   By: jsimelio <jsimelio@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/10 17:20:05 by jsimelio      #+#    #+#                 */
-/*   Updated: 2020/11/10 17:49:06 by jsimelio      ########   odam.nl         */
+/*   Updated: 2020/11/16 17:56:11 by jsimelio      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@ int	ft_lstsize(t_list *lst)
 {
 	int	i;
 
-	i = 0;
+	if (!lst)
+		return (0);
+	i = 1;
 	while (lst->next)
 	{
 		lst = lst->next;

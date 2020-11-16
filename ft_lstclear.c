@@ -6,7 +6,7 @@
 /*   By: jsimelio <jsimelio@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/10 18:17:16 by jsimelio      #+#    #+#                 */
-/*   Updated: 2020/11/12 17:45:12 by jsimelio      ########   odam.nl         */
+/*   Updated: 2020/11/16 18:51:49 by jsimelio      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	t_list	*node;
+	t_list	*next;
 
-	if (lst)
+	if (lst && del)
 	{
 		while (*lst)
 		{
-			node = (*lst)->next;
+			next = (*lst)->next;
 			ft_lstdelone(*lst, del);
+			*lst = next;
 		}
-		*lst = node;
 	}
 }

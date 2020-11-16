@@ -6,7 +6,7 @@
 /*   By: jsimelio <jsimelio@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/09 10:15:23 by jsimelio      #+#    #+#                 */
-/*   Updated: 2020/11/15 22:18:24 by jsimelio      ########   odam.nl         */
+/*   Updated: 2020/11/16 17:49:17 by jsimelio      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	main(void)
 {
-	int n = -0;
+	int n = -152150;
 	char *str;
 
 	str = ft_itoa(n);

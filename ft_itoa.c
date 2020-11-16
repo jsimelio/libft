@@ -6,7 +6,7 @@
 /*   By: jsimelio <jsimelio@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/09 10:04:17 by jsimelio      #+#    #+#                 */
-/*   Updated: 2020/11/15 22:28:10 by jsimelio      ########   odam.nl         */
+/*   Updated: 2020/11/16 17:50:20 by jsimelio      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static char	*copystring(char *tmp)
 	char	*str;
 
 	i = 0;
-	if (!(str = malloc(sizeof(int) * (ft_strlen(tmp) + 1))))
+	if (!(str = malloc(sizeof(char) * (ft_strlen(tmp) + 1))))
 		return (NULL);
 	while (tmp[i])
 	{
@@ -31,8 +31,8 @@ static char	*copystring(char *tmp)
 
 char		*ft_itoa(int n)
 {
-	char			*tmp;
-	char			tmp2[INT_MAX_32BIT + 2];
+	char	*tmp;
+	char	tmp2[INT_MAX_32BIT + 2];
 
 	tmp = tmp2 + INT_MAX_32BIT + 1;
 	if (n == 0)
