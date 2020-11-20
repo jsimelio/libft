@@ -6,7 +6,7 @@
 /*   By: jsimelio <jsimelio@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/02 16:46:13 by jsimelio      #+#    #+#                 */
-/*   Updated: 2020/11/10 19:36:56 by jsimelio      ########   odam.nl         */
+/*   Updated: 2020/11/20 18:44:41 by jsimelio      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	src_len = ft_strlen(src);
 	dst_len = ft_strlen(dst);
 	if (!dstsize)
-		return (0);
-	if (dst_len > dstsize)
+		return (src_len);
+	if (dst_len >= dstsize)
 		return (src_len + dstsize);
 	if (src_len < dstsize - dst_len)
 	{
@@ -30,7 +30,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	else
 	{
 		ft_memcpy(dst + dst_len, src, dstsize - dst_len - 1);
-		dst[dst_len + dstsize - 1] = '\0';
+		dst[dstsize - 1] = 0;
 	}
 	return (dst_len + src_len);
 }

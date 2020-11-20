@@ -6,7 +6,7 @@
 /*   By: jsimelio <jsimelio@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/02 16:46:13 by jsimelio      #+#    #+#                 */
-/*   Updated: 2020/11/14 21:24:11 by jsimelio      ########   odam.nl         */
+/*   Updated: 2020/11/20 14:37:54 by jsimelio      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 size_t	ft_strlcpy(char *dst, const char *src,
 		size_t dstsize)
 {
-	int				i;
+	size_t	i;
 
 	i = 0;
 	if (!dst)

@@ -6,11 +6,18 @@
 /*   By: jsimelio <jsimelio@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/06 10:34:37 by jsimelio      #+#    #+#                 */
-/*   Updated: 2020/11/14 22:22:11 by jsimelio      ########   odam.nl         */
+/*   Updated: 2020/11/20 17:07:01 by jsimelio      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static int	ft_sign(const char *str)
+{
+	if (*str == '-')
+		return (-1);
+	return (0);
+}
 
 static int	ft_iswhite(char c)
 {
@@ -20,7 +27,7 @@ static int	ft_iswhite(char c)
 	return (0);
 }
 
-int	ft_atoi(const char *str)
+int			ft_atoi(const char *str)
 {
 	int			sign;
 	long int	num;
@@ -28,13 +35,9 @@ int	ft_atoi(const char *str)
 	num = 0;
 	while (ft_iswhite(*str))
 		str++;
-	sign = 0;
+	sign = ft_sign(str);
 	if (*str == '+' || *str == '-')
-	{
-		if (*str == '-')
-			sign--;
 		str++;
-	}
 	while (ft_isdigit(*str) != 0)
 	{
 		if (num >= 2147483647)
