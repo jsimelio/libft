@@ -6,7 +6,7 @@
 /*   By: jsimelio <jsimelio@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/03 13:39:53 by jsimelio      #+#    #+#                 */
-/*   Updated: 2020/11/15 16:49:45 by jsimelio      ########   odam.nl         */
+/*   Updated: 2020/11/22 21:06:23 by jsimelio      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strdup(const char *s1)
 
 	strlen = ft_strlen(s1) + 1;
 	if (!(memory = malloc(strlen * sizeof(char))))
-		return ((void*)(0));
+		return (NULL);
 	ft_memcpy(memory, s1, strlen);
 	return (memory);
 }

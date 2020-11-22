@@ -6,11 +6,9 @@
 /*   By: jsimelio <jsimelio@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/02 19:44:25 by jsimelio      #+#    #+#                 */
-/*   Updated: 2020/11/20 16:59:50 by jsimelio      ########   odam.nl         */
+/*   Updated: 2020/11/22 20:58:42 by jsimelio      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {
@@ -22,5 +20,5 @@ char	*ft_strchr(const char *s, int c)
 	}
 	if (c == '\0')
 		return ((char*)s);
-	return ((void*)(0));
+	return (NULL);
 }

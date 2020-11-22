@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   memset_main.c                                      :+:    :+:            */
+/*   ft_memset_main.c                                   :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jsimelio <jsimelio@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/02 09:52:55 by jsimelio      #+#    #+#                 */
-/*   Updated: 2020/11/02 10:43:51 by jsimelio      ########   odam.nl         */
+/*   Updated: 2020/11/22 20:06:57 by jsimelio      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 
 int	main(void)
 {
-	int return_value;
-	int ft_return_value;
 	unsigned char str[10];
 	unsigned char ft_str[10];
 	int i;

@@ -6,7 +6,7 @@
 /*   By: jsimelio <jsimelio@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/09 09:36:06 by jsimelio      #+#    #+#                 */
-/*   Updated: 2020/11/20 19:42:35 by jsimelio      ########   odam.nl         */
+/*   Updated: 2020/11/22 20:02:04 by jsimelio      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static unsigned int	word_length(const char *str, char c)
 	if (*str == 0)
 		return (0);
 	len = 0;
-	while (*str != c)
+	while (*str != c && *str)
 	{
 		len++;
 		str++;
@@ -53,19 +53,12 @@ static void			free_strings(char **arr, unsigned int words)
 	}
 }
 
-char				**ft_split(char const *s, char c)
+static int			assign_strings(char const *s, char c, unsigned int words,
+					char **arr)
 {
-	char			**arr;
-	unsigned int	words;
 	unsigned int	i;
 	unsigned int	len;
 
-	if (!s)
-		return (NULL);
-	words = words_found(s, c);
-	if (!(arr = malloc(sizeof(char*) * (words + 1))))
-		return (NULL);
-	arr[words] = 0;
 	i = 0;
 	while (*s && i < words)
 	{
@@ -79,12 +72,30 @@ char				**ft_split(char const *s, char c)
 			{
 				free_strings(arr, i + 1);
 				free(arr);
-				return (NULL);
+				return (1);
 			}
 			ft_memcpy(arr[i], s, len);
 			i++;
 			s += len;
 		}
 	}
+	return (0);
+}
+
+char				**ft_split(char const *s, char c)
+{
+	char			**arr;
+	unsigned int	words;
+	int				check;
+
+	if (!s)
+		return (NULL);
+	words = words_found(s, c);
+	if (!(arr = malloc(sizeof(char*) * (words + 1))))
+		return (NULL);
+	arr[words] = 0;
+	check = assign_strings(s, c, words, arr);
+	if (check == 1)
+		return (NULL);
 	return (arr);
 }

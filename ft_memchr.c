@@ -6,7 +6,7 @@
 /*   By: jsimelio <jsimelio@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/02 11:59:32 by jsimelio      #+#    #+#                 */
-/*   Updated: 2020/11/02 15:46:15 by jsimelio      ########   odam.nl         */
+/*   Updated: 2020/11/22 21:05:58 by jsimelio      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,5 @@ void	*ft_memchr(const void *s, int c, size_t n)
 			n--;
 		}
 	}
-	return ((void*)(0));
+	return (NULL);
 }
