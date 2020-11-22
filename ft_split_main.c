@@ -6,7 +6,7 @@
 /*   By: jsimelio <jsimelio@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/02 09:52:55 by jsimelio      #+#    #+#                 */
-/*   Updated: 2020/11/22 17:30:07 by jsimelio      ########   odam.nl         */
+/*   Updated: 2020/11/22 23:52:56 by jsimelio      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,16 @@ int	main(void)
 	char **s3 = ft_split(string, c);
 	// printf("%s\n%s\n", s3[0], s3[1]);
 	int i = 0;
-	while (s3[i] != '\0')
+	while (s3[i] != NULL)
 	{
 		ft_print_result(s3[i]);
 		write(1, "\n", 1);
 		i++;
 	}
+	i = 0;
+	while (s3[i] != NULL)
+		free(s3[i++]);
 	free(s3);
+	while (1);
 	return (0);
 }

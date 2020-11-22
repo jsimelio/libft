@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   bzero_main.c                                       :+:    :+:            */
+/*   ft_bzero_main.c                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jsimelio <jsimelio@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/02 09:52:55 by jsimelio      #+#    #+#                 */
-/*   Updated: 2020/11/02 11:49:34 by jsimelio      ########   odam.nl         */
+/*   Updated: 2020/11/22 22:35:17 by jsimelio      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
+#include <strings.h>
 #define LEN 5
 
 int	main(void)
 {
-	int return_value;
-	int ft_return_value;
 	unsigned char str[10];
 	unsigned char ft_str[10];
 	int i;

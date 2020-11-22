@@ -6,7 +6,7 @@
 /*   By: jsimelio <jsimelio@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/03 14:29:09 by jsimelio      #+#    #+#                 */
-/*   Updated: 2020/11/22 17:18:50 by jsimelio      ########   odam.nl         */
+/*   Updated: 2020/11/22 21:24:41 by jsimelio      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	}
 	if (start + len > ft_strlen(s))
 		len = ft_strlen(s) - start;
-	if (!(s2 = malloc((len + 1) * sizeof(char))))
+	s2 = malloc((len + 1) * sizeof(char));
+	if (!s2)
 		return (NULL);
 	ft_memcpy(s2, (s + start), len);
 	s2[len] = 0;

@@ -6,79 +6,120 @@
 #    By: simonasemancova <simonasemancova@studen      +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/11/06 00:54:15 by simonaseman   #+#    #+#                  #
-#    Updated: 2020/11/22 16:05:52 by jsimelio      ########   odam.nl          #
+#    Updated: 2020/11/23 00:02:32 by jsimelio      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
+REG_SRCS = 			ft_atoi.c \
+					ft_bzero.c \
+					ft_calloc.c \
+					ft_isalnum.c \
+					ft_isalpha.c \
+					ft_isascii.c \
+					ft_isdigit.c \
+					ft_isprint.c \
+					ft_itoa.c \
+					ft_memccpy.c \
+					ft_memchr.c \
+					ft_memcmp.c \
+					ft_memcpy.c \
+					ft_memmove.c \
+					ft_memset.c \
+					ft_putchar_fd.c \
+					ft_putendl_fd.c \
+					ft_putnbr_fd.c \
+					ft_putstr_fd.c \
+					ft_split.c \
+					ft_strchr.c \
+					ft_strdup.c \
+					ft_strjoin.c \
+					ft_strlcat.c \
+					ft_strlcpy.c \
+					ft_strlen.c \
+					ft_strmapi.c \
+					ft_strncmp.c \
+					ft_strnstr.c \
+					ft_strrchr.c \
+					ft_strtrim.c \
+					ft_substr.c \
+					ft_tolower.c \
+					ft_toupper.c
+BONUS_SRCS =		ft_lstnew.c \
+					ft_lstdelone.c \
+					ft_lstclear.c \
+					ft_lstadd_front.c \
+					ft_lstadd_back.c \
+					ft_lstsize.c \
+					ft_lstiter.c \
+					ft_lstmap.c \
+					ft_lstlast.c
+REG_OBJS = $(REG_SRCS:.c=.o)
+BONUS_OBJS = $(BONUS_SRCS:.c=.o)
+HEADER_FILE = libft.h
+LIBC = ar -rcs
+FLAGS = -Wall -Wextra -Werror
 
-PATH_SRC = ./
-
-SRC =	$(PATH_SRC)ft_atoi.c \
-		$(PATH_SRC)ft_bzero.c \
-		$(PATH_SRC)ft_calloc.c \
-		$(PATH_SRC)ft_isalnum.c \
-		$(PATH_SRC)ft_isalpha.c \
-		$(PATH_SRC)ft_isascii.c \
-		$(PATH_SRC)ft_isdigit.c \
-		$(PATH_SRC)ft_isprint.c \
-		$(PATH_SRC)ft_itoa.c \
-		$(PATH_SRC)ft_memccpy.c \
-		$(PATH_SRC)ft_memchr.c \
-		$(PATH_SRC)ft_memcmp.c \
-		$(PATH_SRC)ft_memcpy.c \
-		$(PATH_SRC)ft_memmove.c \
-		$(PATH_SRC)ft_memset.c \
-		$(PATH_SRC)ft_putchar_fd.c \
-		$(PATH_SRC)ft_putendl_fd.c \
-		$(PATH_SRC)ft_putnbr_fd.c \
-		$(PATH_SRC)ft_putstr_fd.c \
-		$(PATH_SRC)ft_split.c \
-		$(PATH_SRC)ft_strchr.c \
-		$(PATH_SRC)ft_strdup.c \
-		$(PATH_SRC)ft_strjoin.c \
-		$(PATH_SRC)ft_strlcat.c \
-		$(PATH_SRC)ft_strlcpy.c \
-		$(PATH_SRC)ft_strlen.c \
-		$(PATH_SRC)ft_strmapi.c \
-		$(PATH_SRC)ft_strncmp.c \
-		$(PATH_SRC)ft_strnstr.c \
-		$(PATH_SRC)ft_strrchr.c \
-		$(PATH_SRC)ft_strtrim.c \
-		$(PATH_SRC)ft_substr.c \
-		$(PATH_SRC)ft_tolower.c \
-		$(PATH_SRC)ft_toupper.c \
-
-OBJS = $(SRC:.c=.o)
-
-BONUS = 	ft_lstnew.c \
-			ft_lstdelone.c \
-			ft_lstclear.c \
-			ft_lstadd_front.c \
-			ft_lstadd_back.c \
-			ft_lstsize.c \
-			ft_lstiter.c \
-			ft_lstmap.c \
-			ft_lstlast.c \
-
-BONUS_OBJS = $(BONUS:.c=.o)
-
-CC = gcc
-RM = rm -f
-cFLAGS = -Wall -Werror -Wextra
+ifdef WITH_BONUS
+OBJ_FILES = $(REG_OBJS) $(BONUS_OBJS)
+else
+OBJ_FILES = $(REG_OBJS)
+endif
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-			ar rcs $(NAME) $(OBJS)
+$(NAME): $(OBJ_FILES)
+	$(LIBC) $(NAME) $(OBJ_FILES)
+
+%.o: %.c $(HEADER_FILE)
+	$(CC) -c $(FLAGS) -o $@ $<
+
+bonus:
+	$(MAKE) WITH_BONUS=1 all
 
 clean:
-	$(RM) $(OBJS)
+	rm -f $(REG_OBJS) $(BONUS_OBJS)
 
-fclean:
-	$(RM) $(NAME)
+fclean: clean
+	rm -f $(NAME)
 
-re: $(OBJS) $(BONUS_OBJS)
-	ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
+re:
+	$(MAKE) fclean
+	$(MAKE) all
 
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re
+
+# NAME = libft.a
+# SRCS = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c\
+# ft_isdigit.c ft_isprint.c ft_memccpy.c ft_memchr.c ft_memcmp.c ft_memcpy.c\
+# ft_memmove.c ft_memset.c ft_strchr.c ft_strlcat.c ft_strlcpy.c ft_strlen.c\
+# ft_strncmp.c ft_strnstr.c ft_strrchr.c ft_tolower.c ft_toupper.c ft_strdup.c\
+# ft_substr.c ft_strjoin.c ft_split.c ft_strtrim.c ft_itoa.c ft_strmapi.c\
+# ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
+# OBJ_SRCS = $(SRCS:.c=.o)
+# BONUS_SRCS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c\
+# ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
+# OBJ_BONUS = $(BONUS_SRCS:.c=.o)
+# LIBC = ar -rcs
+# FLAGS = -Wall -Wextra -Werror
+# HEADER_FILE = libft.h
+# ifdef BONUS
+# OBJ_FILES = $(OBJ_SRCS) $(OBJ_BONUS)
+# else
+# OBJ_FILES = $(OBJ_SRCS)
+# endif
+# all: $(NAME)
+# $(NAME): $(OBJ_FILES)
+# 	$(LIBC) $(NAME) $(OBJ_FILES)
+# %.o: %.c $(HEADER_FILE)
+# 	$(CC) -c $(FLAGS) -o $@ $<
+# bonus:
+# 	$(MAKE) BONUS=1 all
+# clean:
+# 	rm -f $(OBJ_SRCS) $(OBJ_BONUS)
+# fclean: clean
+# 	rm -f $(NAME)
+# re:
+# 	$(MAKE) fclean
+# 	$(MAKE) all
+# .PHONY: all clean fclean re

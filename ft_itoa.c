@@ -6,7 +6,7 @@
 /*   By: jsimelio <jsimelio@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/09 10:04:17 by jsimelio      #+#    #+#                 */
-/*   Updated: 2020/11/16 17:50:20 by jsimelio      ########   odam.nl         */
+/*   Updated: 2020/11/22 23:43:29 by jsimelio      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ static char	*copystring(char *tmp)
 	char	*str;
 
 	i = 0;
-	if (!(str = malloc(sizeof(char) * (ft_strlen(tmp) + 1))))
+	str = malloc(sizeof(char) * (ft_strlen(tmp) + 1));
+	if (!str)
 		return (NULL);
 	while (tmp[i])
 	{

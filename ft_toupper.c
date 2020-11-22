@@ -6,13 +6,13 @@
 /*   By: jsimelio <jsimelio@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/02 21:44:58 by jsimelio      #+#    #+#                 */
-/*   Updated: 2020/11/22 20:59:47 by jsimelio      ########   odam.nl         */
+/*   Updated: 2020/11/22 21:25:33 by jsimelio      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_toupper(int c)
 {
 	if (c >= 'a' && c <= 'z')
-		return (c -= ' ');
+		c -= ' ';
 	return (c);
 }

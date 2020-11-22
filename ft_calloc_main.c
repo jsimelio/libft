@@ -6,11 +6,12 @@
 /*   By: jsimelio <jsimelio@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/03 13:39:53 by jsimelio      #+#    #+#                 */
-/*   Updated: 2020/11/15 16:18:33 by jsimelio      ########   odam.nl         */
+/*   Updated: 2020/11/22 22:38:09 by jsimelio      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 int	main(void)
 {

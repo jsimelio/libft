@@ -6,7 +6,7 @@
 /*   By: jsimelio <jsimelio@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/09 09:36:06 by jsimelio      #+#    #+#                 */
-/*   Updated: 2020/11/22 20:02:04 by jsimelio      ########   odam.nl         */
+/*   Updated: 2020/11/22 21:23:01 by jsimelio      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,8 @@ char				**ft_split(char const *s, char c)
 	if (!s)
 		return (NULL);
 	words = words_found(s, c);
-	if (!(arr = malloc(sizeof(char*) * (words + 1))))
+	arr = malloc(sizeof(char*) * (words + 1));
+	if (!arr)
 		return (NULL);
 	arr[words] = 0;
 	check = assign_strings(s, c, words, arr);

@@ -6,11 +6,12 @@
 /*   By: jsimelio <jsimelio@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/02 09:52:55 by jsimelio      #+#    #+#                 */
-/*   Updated: 2020/11/03 17:40:30 by jsimelio      ########   odam.nl         */
+/*   Updated: 2020/11/23 00:00:55 by jsimelio      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 #define LEN 100
 
 int	main(void)

@@ -6,7 +6,7 @@
 /*   By: jsimelio <jsimelio@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/02 09:14:49 by jsimelio      #+#    #+#                 */
-/*   Updated: 2020/11/22 15:41:00 by jsimelio      ########   odam.nl         */
+/*   Updated: 2020/11/22 21:53:20 by jsimelio      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,7 @@
 # define LIBFT_H
 # define INT_MAX_32BIT 10
 
-# include <string.h>
-# include <strings.h>
 # include <stdlib.h>
-# include <stdio.h>
 # include <unistd.h>
 
 typedef struct		s_list
