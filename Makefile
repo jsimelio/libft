@@ -6,7 +6,7 @@
 #    By: simonasemancova <simonasemancova@studen      +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/11/06 00:54:15 by simonaseman   #+#    #+#                  #
-#    Updated: 2020/11/10 19:04:53 by simonaseman   ########   odam.nl          #
+#    Updated: 2020/11/22 16:05:52 by jsimelio      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,16 +51,15 @@ SRC =	$(PATH_SRC)ft_atoi.c \
 
 OBJS = $(SRC:.c=.o)
 
-BONUS = ft_lstnew.c \
-		ft_lstadd_front.c \
-		ft_lstsize.c \
-		ft_lstlast.c \
-		ft_lstadd_back.c \
-		ft_lstdelone.c \
-		ft_lstclear.c \
-		ft_lstiter.c \
-		ft_lstmap.c \
-
+BONUS = 	ft_lstnew.c \
+			ft_lstdelone.c \
+			ft_lstclear.c \
+			ft_lstadd_front.c \
+			ft_lstadd_back.c \
+			ft_lstsize.c \
+			ft_lstiter.c \
+			ft_lstmap.c \
+			ft_lstlast.c \
 
 BONUS_OBJS = $(BONUS:.c=.o)
 
@@ -79,9 +78,7 @@ clean:
 fclean:
 	$(RM) $(NAME)
 
-re:	fclean $(NAME)
-
-bonus: $(OBJS) $(BONUS_OBJS)
+re: $(OBJS) $(BONUS_OBJS)
 	ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
 
 .PHONY: all clean fclean re bonus
