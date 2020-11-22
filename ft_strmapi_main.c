@@ -6,11 +6,12 @@
 /*   By: jsimelio <jsimelio@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/09 15:44:05 by jsimelio      #+#    #+#                 */
-/*   Updated: 2020/11/09 16:07:44 by jsimelio      ########   odam.nl         */
+/*   Updated: 2020/11/23 00:13:16 by jsimelio      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 char	capitalizeOdd(unsigned int index, char c)
 {
@@ -27,5 +28,8 @@ char	capitalizeOdd(unsigned int index, char c)
 int		main(void)
 {
 	char	*str = "soem string.";
-	printf("%s\n", ft_strmapi(str, *capitalizeOdd));
+	char *str2 = ft_strmapi(str, *capitalizeOdd);
+	printf("%s\n", str2);
+	free(str2);
+	return (0);
 }

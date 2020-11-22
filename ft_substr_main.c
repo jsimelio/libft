@@ -6,11 +6,12 @@
 /*   By: jsimelio <jsimelio@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/02 09:52:55 by jsimelio      #+#    #+#                 */
-/*   Updated: 2020/11/22 17:17:13 by jsimelio      ########   odam.nl         */
+/*   Updated: 2020/11/23 00:15:12 by jsimelio      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 #define LEN 100
 
 int	main(void)
@@ -26,5 +27,6 @@ int	main(void)
 	// char *s2 = ft_substr(s1, 3, 4);
 	// printf("%s", s2);
 	// free(s2);
+	free (ret);
 	return (0);
 }
