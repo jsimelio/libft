@@ -6,7 +6,7 @@
 /*   By: jsimelio <jsimelio@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/06 10:34:37 by jsimelio      #+#    #+#                 */
-/*   Updated: 2020/11/20 17:07:01 by jsimelio      ########   odam.nl         */
+/*   Updated: 2020/11/25 22:26:05 by jsimelio      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	ft_sign(const char *str)
 	return (0);
 }
 
-static int	ft_iswhite(char c)
+static int	ft_isspace(char c)
 {
 	if (c == '\t' || c == '\v' || c == '\f'
 		|| c == '\n' || c == '\r' || c == ' ')
@@ -33,14 +33,14 @@ int			ft_atoi(const char *str)
 	long int	num;
 
 	num = 0;
-	while (ft_iswhite(*str))
+	while (ft_isspace(*str))
 		str++;
 	sign = ft_sign(str);
 	if (*str == '+' || *str == '-')
 		str++;
 	while (ft_isdigit(*str) != 0)
 	{
-		if (num >= 2147483647)
+		if (num >= LONG_MAX_VALUE_32BIT)
 		{
 			if (sign < 0)
 				return (0);

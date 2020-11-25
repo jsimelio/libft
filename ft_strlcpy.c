@@ -6,7 +6,7 @@
 /*   By: jsimelio <jsimelio@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/02 16:46:13 by jsimelio      #+#    #+#                 */
-/*   Updated: 2020/11/20 14:37:54 by jsimelio      ########   odam.nl         */
+/*   Updated: 2020/11/25 22:18:42 by jsimelio      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,14 @@ size_t	ft_strlcpy(char *dst, const char *src,
 	size_t	i;
 
 	i = 0;
-	if (!dst)
+	if (!src)
 		return (0);
-	while (src[i] && i + 1 < dstsize)
-	{
-		dst[i] = src[i];
-		i++;
-	}
 	if (dstsize > 0)
-	{
-		dst[i] = '\0';
-	}
+		while (src[i] && i < dstsize - 1)
+		{
+			dst[i] = src[i];
+			i++;
+		}
+	dst[i] = '\0';
 	return (ft_strlen(src));
 }

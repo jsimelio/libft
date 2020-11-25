@@ -6,7 +6,7 @@
 /*   By: jsimelio <jsimelio@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/02 16:46:13 by jsimelio      #+#    #+#                 */
-/*   Updated: 2020/11/03 17:33:41 by jsimelio      ########   odam.nl         */
+/*   Updated: 2020/11/24 18:44:06 by jsimelio      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 size_t	ft_strlen(const char *s)
 {
-	int i;
+	size_t i;
 
 	i = 0;
 	while (s[i] != '\0')
 		i++;
-	return ((size_t)i);
+	return (i);
 }

@@ -6,13 +6,14 @@
 /*   By: jsimelio <jsimelio@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/02 09:14:49 by jsimelio      #+#    #+#                 */
-/*   Updated: 2020/11/22 21:53:20 by jsimelio      ########   odam.nl         */
+/*   Updated: 2020/11/25 22:24:37 by jsimelio      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # define INT_MAX_32BIT 10
+# define LONG_MAX_VALUE_32BIT 9223372036854775807
 
 # include <stdlib.h>
 # include <unistd.h>
