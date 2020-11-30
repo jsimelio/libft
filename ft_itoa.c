@@ -6,7 +6,7 @@
 /*   By: jsimelio <jsimelio@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/09 10:04:17 by jsimelio      #+#    #+#                 */
-/*   Updated: 2020/11/25 22:57:09 by jsimelio      ########   odam.nl         */
+/*   Updated: 2020/11/26 00:18:45 by jsimelio      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static char	*ft_copystring(char *tmp, size_t i)
 	char	*str;
 
 	j = 0;
-	str = malloc(sizeof(char) * (i + 1));
+	str = malloc(sizeof(char) * i);
 	if (!str)
 		return (NULL);
 	while (tmp[j])
@@ -30,7 +30,7 @@ static char	*ft_copystring(char *tmp, size_t i)
 	return (str);
 }
 
-int			ft_sign(char **tmp, int sign)
+static int	ft_sign(char **tmp, int sign)
 {
 	if (sign == -1)
 	{
@@ -41,31 +41,45 @@ int			ft_sign(char **tmp, int sign)
 	return (0);
 }
 
+static void	ft_copytmp(char **tmp, int *n, size_t *i)
+{
+	while (*n != 0)
+	{
+		(*tmp)--;
+		if (*n > 0)
+			**tmp = '0' + *n % 10;
+		else
+			**tmp = '0' - *n % 10;
+		*n /= 10;
+		(*i)++;
+	}
+}
+
 char		*ft_itoa(int n)
 {
 	char	*tmp;
-	char	tmp2[INT_MAX_32BIT + 2];
+	char	*tmp2;
 	size_t	i;
 	int		sign;
 
 	i = 1;
-	tmp = tmp2 + INT_MAX_32BIT + 1;
+	sign = 0;
+	tmp = ft_calloc(1, sizeof(char) * (INT_MAX_32BIT + 2));
+	if (tmp == NULL)
+		return (NULL);
+	tmp2 = tmp + INT_MAX_32BIT + 1;
 	if (n < 0)
 		sign = -1;
 	if (n == 0)
-		tmp = "0";
-	else
-		while (n != 0)
-		{
-			tmp--;
-			if (n > 0)
-				*tmp = '0' + n % 10;
-			else
-				*tmp = '0' - n % 10;
-			n /= 10;
-			i++;
-		}
-	if (ft_sign(&tmp, sign) == -1)
+	{
+		tmp2 = "0";
 		i++;
-	return (ft_copystring(tmp, i));
+	}
+	else
+		ft_copytmp(&tmp2, &n, &i);
+	if (ft_sign(&tmp2, sign) == -1)
+		i++;
+	tmp2 = ft_copystring(tmp2, i);
+	free(tmp);
+	return (tmp2);
 }

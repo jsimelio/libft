@@ -6,7 +6,7 @@
 /*   By: jsimelio <jsimelio@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/06 10:34:37 by jsimelio      #+#    #+#                 */
-/*   Updated: 2020/11/25 22:26:05 by jsimelio      ########   odam.nl         */
+/*   Updated: 2020/11/25 23:58:14 by jsimelio      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int			ft_atoi(const char *str)
 		str++;
 	while (ft_isdigit(*str) != 0)
 	{
-		if (num >= LONG_MAX_VALUE_32BIT)
+		if (num > LONG_MAX_VALUE_32BIT / 10)
 		{
 			if (sign < 0)
 				return (0);
